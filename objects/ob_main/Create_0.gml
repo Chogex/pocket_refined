@@ -109,16 +109,22 @@ textbox_char_pos=0;
 #macro money_prize_power_area_bonus 9.46
 #macro money_prize_power_n 1.5
 #macro money_prize_penalty_multiplier 10
-#macro money_payout_base 100 //100 150 200 250 300 350 400 450 500 (penalty: 20-500)
+#macro money_payout_base 200 //200 250 300 350 400 450 500 550 600 (penalty: 20-500)
 #macro money_payout_area_bonus 50
 #macro money_payout_penalty_multiplier 10
-#macro money_badge_base 200 //200 325 450 575 700 825 950 1075 1200 (minimum should be enough for a card pack)
+#macro money_badge_base 400 //400 525 650 775 800 925 1050 1175 1300 (minimum should be enough for a card pack)
 #macro money_badge_area_bonus 125
 #macro sell_value_multiplier 2.5
 #macro sell_glyphed_multiplier 1.25
 #macro sell_enigma_multiplier 1.5
 #macro sell_shiny_multiplier 2
 #macro tutorial_payout 500
+//
+#macro card_weight_secret 100
+#macro card_weight_environment 400
+#macro card_weight_enigma 250
+#macro card_weight_stage_2 900
+#macro card_weight_stage_3 400
 //
 battle_hp[0]=5; //10
 battle_hp[1]=15; //30
@@ -167,10 +173,10 @@ event_cost_standby_levelup=0;
 for (var i=0; i<=999; i++;) {
 	event_cost[i]=0;
 }
-event_cost[ref_event_cardpack]=200;
+event_cost[ref_event_cardpack]=300;
 event_cost[ref_event_berry]=100;
-event_cost[ref_event_levelup]=100;
-#macro levelup_cost_multiplier 25 //100 125 150 175 200 225 250 275 300
+event_cost[ref_event_levelup]=75;
+#macro levelup_cost_multiplier 1.2044 //100 125 150 175 200 225 250 275 300
 event_cost[ref_event_evolution]=500;
 event_cost[ref_event_glyph]=300;
 //
