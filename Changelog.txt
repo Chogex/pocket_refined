@@ -1,0 +1,24 @@
+v0.0.2.0
+
+Upped rare card chances:
+===================
+Secret card chance from 0.05% to 1%
+Environment card chance from 2% to 4%
+Enigma (legendary) card chance from 0.5% to 2.5%
+Stage 2 card chance from 2.5% to 9%
+Stage 3 card chance from 0.5% to 4%
+Shiny chance from 0.5% to 1%
+Enigma berry chance from 15% to 20%
+
+Upped income:
+===================
+Base battle reward from 100 to 200
+Base Gym reward from 200 to 400
+
+Changed costs:
+===================
+Card pack from 200 to 300
+
+Level up cost formula changed to now be exponential from 75 up to 400
+Old: 100 + 25 * (level - 1)
+New: 75 * 1.2044 ^ (level - 1)

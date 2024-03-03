@@ -60,6 +60,13 @@ else if instance_exists(ob_event) and occupy_id=-1 and ob_main.cursor_hide=false
 }
 //————————————————————————————————————————————————————————————————————————————————————————————————————
 if instance_exists(ob_event) and ob_event.event_kind=ref_event_levelup {
-	if occupy_id!=-1 { ob_main.event_cost_standby_levelup=ob_main.event_cost[ref_event_levelup]+levelup_cost_multiplier*(occupy_id.card_level-1); }
-	else { ob_main.event_cost_standby_levelup=0; }
+	if occupy_id!=-1 
+	{
+		levelup_cost = ob_main.event_cost[ref_event_levelup] * power(levelup_cost_multiplier, occupy_id.card_level - 1);
+        ob_main.event_cost_standby_levelup = round(levelup_cost / 5) * 5; //Round cost to the nearest multiple of 5
+	}
+	else 
+	{ 
+		ob_main.event_cost_standby_levelup=0;
+	}
 }

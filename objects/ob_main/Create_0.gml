@@ -120,7 +120,7 @@ textbox_char_pos=0;
 #macro sell_shiny_multiplier 2
 #macro tutorial_payout 500
 //
-#macro card_weight_secret 100
+#macro card_weight_secret 100 //Total weight: 10000
 #macro card_weight_environment 400
 #macro card_weight_enigma 250
 #macro card_weight_stage_2 900
@@ -176,7 +176,7 @@ for (var i=0; i<=999; i++;) {
 event_cost[ref_event_cardpack]=300;
 event_cost[ref_event_berry]=100;
 event_cost[ref_event_levelup]=75;
-#macro levelup_cost_multiplier 1.2044 //100 125 150 175 200 225 250 275 300
+#macro levelup_cost_multiplier 1.2044 //75 90 110 130 160 190 230 275 330 400
 event_cost[ref_event_evolution]=500;
 event_cost[ref_event_glyph]=300;
 //

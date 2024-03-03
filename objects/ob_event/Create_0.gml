@@ -129,7 +129,7 @@ else if event_kind=ref_event_grass or event_kind=ref_event_fire or event_kind=re
 			create_card_form_value=0;
 			//
 			create_card_shiny=false;
-			var random_id_chance=irandom(999); if random_id_chance<5 { create_card_shiny=true; } //0.5% shiny, same as in ob_card
+			var random_id_chance=irandom(999); if random_id_chance<10 { create_card_shiny=true; } //1% shiny, same as in ob_card
 		}
 		else {
 			create_card_cat=1;

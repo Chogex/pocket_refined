@@ -3,6 +3,13 @@ depth=200;
 if instance_exists(ob_control) { var reference_id=ob_control; }
 else if instance_exists(ob_deckbuild) { var reference_id=ob_deckbuild; }
 else if instance_exists(ob_event) { var reference_id=ob_event; }
+if instance_exists(ob_main){
+	var secret_chance = ob_main.card_weight_secret;
+	var environment_chance = ob_main.card_weight_environment + secret_chance;
+	var enigma_chance = ob_main.card_weight_enigma + environment_chance;
+	var stage_2_chance = ob_main.card_weight_stage_2 + enigma_chance;
+	var stage_3_chance = ob_main.card_weight_stage_3 + stage_2_chance;
+}
 //————————————————————————————————————————————————————————————————————————————————————————————————————
 if reference_id=ob_deckbuild or (reference_id=ob_event and ob_event.show_deck=true) { card_face=true; }
 else { card_face=false; }
@@ -59,11 +66,11 @@ if card_cat=0 {
 		var allow_id_enigma=false, allow_id_pseudo=false, allow_id_fossil=false, allow_id_starter=false, allow_id_baby=false;
 		//————————————————————————————————————————————————————————————————————————————————————————————————————
 		if random_card=true and enemy_randomizer=false {
-			if random_group_chance<1 { //0.01% secret card
+			if random_group_chance<secret_chance { //1% secret card
 				card_id=irandom_range(1,secret_cards_total)+2000;
 				card_innate=1;
 			}
-			else if random_group_chance<201 { //2% environment card
+			else if random_group_chance<environment_chance { //4% environment card
 				card_id=irandom_range(1,environment_cards_total)+2500;
 				card_innate=1;
 			}
@@ -71,10 +78,10 @@ if card_cat=0 {
 				card_id=irandom_range(1,normal_poke_id_max);
 				card_innate=1;
 				//
-				if random_group_chance<231 { choose_id_enigma=true; } //0.3% enigma
-				else if random_group_chance<481 { choose_id_stage_2=true; } //2.5% stage 2
-				else if random_group_chance<531 { choose_id_stage_3=true; } //0.5% stage 3
-				else { choose_id_normal=true; } //94.69% stage 1 or baby
+				if random_group_chance<enigma_chance { choose_id_enigma=true; } //2.5% enigma
+				else if random_group_chance<stage_2_chance { choose_id_stage_2=true; } //9% stage 2
+				else if random_group_chance<stage_3_chance { choose_id_stage_3=true; } //4% stage 3
+				else { choose_id_normal=true; } //79.5% stage 1 or baby
 				//
 				var random_id_chance=irandom(99); if random_id_chance<50 { allow_id_pseudo=true; } //50% pseudo allowed
 				var random_id_chance=irandom(99); if random_id_chance<75 { allow_id_fossil=true; } //75% fossil allowed
@@ -88,7 +95,7 @@ if card_cat=0 {
 			card_glyph_c=-1;
 			card_form_value=irandom(999);
 			//
-			var random_id_chance=irandom(999); if random_id_chance<5 and card_id<=normal_poke_id_max { card_shiny=true; } //0.5% shiny, same as in ob_event
+			var random_id_chance=irandom(999); if random_id_chance<10 and card_id<=normal_poke_id_max { card_shiny=true; } //1% shiny, same as in ob_event
 			else { card_shiny=false; }
 		}
 		//————————————————————————————————————————————————————————————————————————————————————————————————————
@@ -357,8 +364,8 @@ else if card_cat=1 {
 	//
 	if random_card=true {
 		var card_berry_chance=irandom(99);
-		if card_berry_chance<85 { card_id=choose(3000,3001,3002); }
-		else { card_id=3003; } //15% (keep in mind number of extra enigma berries in enemy decks in sc_enemy_berry_deck)
+		if card_berry_chance<80 { card_id=choose(3000,3001,3002); }
+		else { card_id=3003; } //20% (keep in mind number of extra enigma berries in enemy decks in sc_enemy_berry_deck)
 	}
 	//
 	switch (card_id) {
