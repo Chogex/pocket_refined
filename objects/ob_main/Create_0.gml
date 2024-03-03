@@ -105,7 +105,7 @@ textbox_char_pos=0;
 #macro maindeck_total_max 1000
 #macro berrydeck_total_max 200 //per berry
 //
-#macro money_prize_power_base 24.33 //120 196 284 383 490 606 730 862 1000 (penalty: 40-1000)
+#macro money_prize_power_base 35 //120 196 284 383 490 606 730 862 1000 (penalty: 40-1000)
 #macro money_prize_power_area_bonus 9.46
 #macro money_prize_power_n 1.5
 #macro money_prize_penalty_multiplier 10
