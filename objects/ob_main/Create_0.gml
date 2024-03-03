@@ -120,11 +120,11 @@ textbox_char_pos=0;
 #macro sell_shiny_multiplier 2
 #macro tutorial_payout 500
 //
-#macro card_weight_secret 100 //Total weight: 10000
-#macro card_weight_environment 400
-#macro card_weight_enigma 250
-#macro card_weight_stage_2 900
-#macro card_weight_stage_3 400
+#macro secret_card_wt 100 //Total weight: 10000
+#macro environment_card_wt 400
+#macro enigma_card_wt 250
+#macro stage_2_card_wt 900
+#macro stage_3_card_wt 400
 //
 battle_hp[0]=5; //10
 battle_hp[1]=15; //30

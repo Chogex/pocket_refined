@@ -4,11 +4,11 @@ if instance_exists(ob_control) { var reference_id=ob_control; }
 else if instance_exists(ob_deckbuild) { var reference_id=ob_deckbuild; }
 else if instance_exists(ob_event) { var reference_id=ob_event; }
 if instance_exists(ob_main){
-	var secret_chance = ob_main.card_weight_secret;
-	var environment_chance = ob_main.card_weight_environment + secret_chance;
-	var enigma_chance = ob_main.card_weight_enigma + environment_chance;
-	var stage_2_chance = ob_main.card_weight_stage_2 + enigma_chance;
-	var stage_3_chance = ob_main.card_weight_stage_3 + stage_2_chance;
+	var secret_chance = secret_card_wt;
+	var environment_chance = environment_card_wt + secret_chance;
+	var enigma_chance = enigma_card_wt + environment_chance;
+	var stage_2_chance = stage_2_card_wt + enigma_chance;
+	var stage_3_chance = stage_3_card_wt + stage_2_chance;
 }
 //————————————————————————————————————————————————————————————————————————————————————————————————————
 if reference_id=ob_deckbuild or (reference_id=ob_event and ob_event.show_deck=true) { card_face=true; }
