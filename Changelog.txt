@@ -1,3 +1,9 @@
+v0.0.2.2
+Centralized road event chances to be set as percentages in ob_main\Create_0:
+    Created new utilities script
+    Added new function to utilities: calculateWeights(percentages, maxWeight)
+    Refactor event weight calculation to use calculateWeights
+
 v0.0.2.0
 
 Upped rare card chances:

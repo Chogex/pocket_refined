@@ -47,6 +47,7 @@
     {"name":"sc_glyph_random","order":10,"path":"scripts/sc_glyph_random/sc_glyph_random.yy",},
     {"name":"sc_config_save","order":1,"path":"scripts/sc_config_save/sc_config_save.yy",},
     {"name":"sc_card_effect","order":13,"path":"scripts/sc_card_effect/sc_card_effect.yy",},
+    {"name":"sc_utilities","order":13,"path":"scripts/sc_utilities/sc_utilities.yy",},
     {"name":"sc_card_cost_map","order":6,"path":"scripts/sc_card_cost_map/sc_card_cost_map.yy",},
     {"name":"ob_card_space","order":6,"path":"objects/ob_card_space/ob_card_space.yy",},
     {"name":"sp_area","order":8,"path":"sprites/sp_area/sp_area.yy",},
