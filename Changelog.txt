@@ -1,3 +1,9 @@
+v0.0.2.3
+Further refactored determining random events in ob_main\Step_0.gml
+Only 1 line addition is necessary to add a new event to the event random generation.
+Refactored calculateWeights as sc_calculate_weights
+    now only 1 input parameter of an array in the form of [weight, item]
+
 v0.0.2.2
 Centralized road event chances to be set as percentages in ob_main\Create_0:
     Created new utilities script

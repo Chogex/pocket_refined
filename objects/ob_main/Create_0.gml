@@ -126,27 +126,6 @@ textbox_char_pos=0;
 #macro stage_2_card_wt 900
 #macro stage_3_card_wt 400
 //
-#macro event_battle 0
-#macro event_payout 1
-#macro event_freecard 2
-#macro event_cardpack 3
-#macro event_berry 4
-#macro event_levelup 5
-#macro event_evolution 6
-#macro event_glyph 7
-#macro event_tribute 8
-//
-// Event chances in percentages. MUST add up to 100
-road_event_chances[event_battle] = 35
-road_event_chances[event_payout] = 2.5
-road_event_chances[event_freecard] = 2.5
-road_event_chances[event_cardpack] = 15
-road_event_chances[event_berry] = 10
-road_event_chances[event_levelup] = 20
-road_event_chances[event_evolution] = 5
-road_event_chances[event_glyph] = 7.5
-road_event_chances[event_tribute] = 2.5
-//
 battle_hp[0]=5; //10
 battle_hp[1]=15; //30
 battle_hp[2]=25; //50

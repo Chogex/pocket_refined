@@ -1,36 +1,25 @@
-function calculateWeights(itemPercentages, maxWeight)
-/// Calculate Weights from Percentages. They must add up to exactly 100%    
-/// @param itemPercentages The percentages of each item
-/// @param maxWeight The current maximum total weight
-/// Returns an array of weights for each item
+function sc_calculate_weights(items)
+/// Picks a random item from an array based on weights
+/// @param items Array in the form of [weight][item]
+/// Returns a random item from the array
 {
-    var numItems = array_length(itemPercentages)
-    var totalPercentage = 0;
-    var totalWeight = 0;
-    var weights = array_create(numItems, 0);
+   var rnd = irandom(sc_sum_weights(items)-1);
+   for(var i = 0; i < array_length(items); i++)
+   {
+      rnd -= items[i][0];
+      if(rnd <= 0) {
+		  return items[i];
+	  }
+   }
+   return items[array_length(items)-1];
+}
 
-    // Calculate total percentage and weights
-    for (var i = 0; i < numItems; i++)
-    {
-        totalPercentage += itemPercentages[i];
-        weights[i] = totalWeight + (itemPercentages[i] / 100) * maxWeight;
-        totalWeight += weights[i];
-    }
-
-    /* Scale weights if necessary
-    if (totalWeight != maxWeight)
-    {
-        if (scale)
-        {
-            var scale = maxWeight / totalWeight;
-            for (var j = 0; j < numItems; j++)
-            {
-                weights[j] *= scale;
-            }
-            totalWeight = maxWeight;
-        }
-    }
-    */
-
-    return weights;
+function sc_sum_weights(items){
+	var sum = 0;
+	
+   for(var i = 0; i < array_length(items); i++)
+   {
+      sum += items[i][0];
+   }
+   return sum;
 }
