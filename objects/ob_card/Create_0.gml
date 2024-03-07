@@ -86,10 +86,10 @@ if card_cat=0 {
 						choose_id_normal = true;
 						break;
 				}
-				allow_id_pseudo = irandom(99) < allow_pseudo_chance;
-				allow_id_fossil = irandom(99) < allow_fossil_chance;
-				allow_id_starter = irandom(99) < allow_starter_chance;
-				allow_id_baby = irandom(99) < allow_baby_chance;
+				allow_id_pseudo = sc_roll_percentage(allow_pseudo_chance);
+				allow_id_fossil = sc_roll_percentage(allow_fossil_chance);
+				allow_id_starter = sc_roll_percentage(allow_starter_chance);
+				allow_id_baby = sc_roll_percentage(allow_baby_chance);
 			}
 			//
 			card_level=irandom_range(ob_main.card_level_spawn_min,ob_main.card_level_spawn_limit);
@@ -103,7 +103,8 @@ if card_cat=0 {
 		}
 		//————————————————————————————————————————————————————————————————————————————————————————————————————
 		else if random_card=true and enemy_randomizer=true {
-			if random_group_chance<500 { //5% environment card
+ 
+			if sc_roll_percentage(enemy_environment_card_chance) { //5% environment card
 				card_id=irandom_range(1,environment_cards_total)+2500;
 				card_innate=1;
 			}
@@ -111,33 +112,23 @@ if card_cat=0 {
 				card_id=irandom_range(1,normal_poke_id_max);
 				//
 				if reference_id.create_card_innate=-1 {
-					var card_enemy_innate_value=irandom(999);
 					if ob_main.playing_champion=true {
-						if card_enemy_innate_value<150 { card_innate=innate_max; } //15%
-						else if card_enemy_innate_value<350 { card_innate=3; } //20%
-						else if card_enemy_innate_value<600 { card_innate=2; } //25%
-						else { card_innate=1; } //40%
+						card_innate = sc_roll_innate(15, 20, 25, 40);
 					}
 					else if ob_main.playing_gym=true or ob_main.playing_elite=true {
-						if card_enemy_innate_value<(20+ob_main.area_zone*10) { card_innate=innate_max; } //2% - 10%
-						else if card_enemy_innate_value<(50+ob_main.area_zone*25) { card_innate=3; } //3% - 15%
-						else if card_enemy_innate_value<(100+ob_main.area_zone*45) { card_innate=2; } //5% - 21%
-						else { card_innate=1; } //90% - 54%
+						card_innate = sc_roll_innate(20+ob_main.area_zone*10, 30+ob_main.area_zone*15, 50+ob_main.area_zone*20, 540);
 					}
 					else {
-						if card_enemy_innate_value<(10+ob_main.area_zone*5) { card_innate=innate_max; } //1% - 5%
-						else if card_enemy_innate_value<(30+ob_main.area_zone*15) { card_innate=3; } //2% - 10%
-						else if card_enemy_innate_value<(80+ob_main.area_zone*25) { card_innate=2; } //5% - 13%
-						else { card_innate=1; } //92% - 72%
+						card_innate = sc_roll_innate(10+ob_main.area_zone*5, 20+ob_main.area_zone*10, 50+ob_main.area_zone*10, 720);
 					}
 				}
 				else { card_innate=reference_id.create_card_innate; }
 				//
-				var random_id_chance=irandom(99); if random_id_chance<5 { allow_id_enigma=true; } //5% enigma allowed
-				var random_id_chance=irandom(99); if random_id_chance<90 { allow_id_pseudo=true; } //90% pseudo allowed
-				var random_id_chance=irandom(99); if random_id_chance<90 { allow_id_fossil=true; } //90% fossil allowed
-				var random_id_chance=irandom(99); if random_id_chance<75 { allow_id_starter=true; } //75% starter allowed
-				var random_id_chance=irandom(99); if random_id_chance<25 { allow_id_baby=true; } //25% baby allowed
+				allow_id_enigma = sc_roll_percentage(enemy_enigma_chance);
+				allow_id_pseudo = sc_roll_percentage(enemy_pseudo_chance);
+				allow_id_fossil = sc_roll_percentage(enemy_fossil_chance);
+				allow_id_starter = sc_roll_percentage(enemy_starter_chance);
+				allow_id_baby = sc_roll_percentage(enemy_baby_chance);
 			}
 			//
 			if reference_id.create_card_level=-1 {

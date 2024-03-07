@@ -1,3 +1,9 @@
+v0.0.2.5
+New functions in sc_utilities:
+    sc_roll_percentage, sees if random number is within given percentage
+    sc_roll_innate, rolls innate strength for card based on 4 weights
+Refactored enemy card generation to use the above scripts to reduce repetition
+
 v0.0.2.4
 Refactored card generation to use sc_calculate_weights
 Moved event weights to be determined in ob_main/Create_0

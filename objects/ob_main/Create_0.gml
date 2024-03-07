@@ -132,6 +132,14 @@ textbox_char_pos=0;
 #macro allow_starter_chance 25
 #macro allow_baby_chance 25
 //
+#macro enemy_environment_card_chance 5
+//
+#macro enemy_enigma_chance 5 //Chances to allow enemy card to be of given type in percentage
+#macro enemy_pseudo_chance 90
+#macro enemy_fossil_chance 90
+#macro enemy_starter_chance 75
+#macro enemy_baby_chance 25
+//
 battle_hp[0]=5; //10
 battle_hp[1]=15; //30
 battle_hp[2]=25; //50
