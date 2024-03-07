@@ -1,3 +1,7 @@
+v0.0.2.4
+Refactored card generation to use sc_calculate_weights
+Moved event weights to be determined in ob_main/Create_0
+
 v0.0.2.3
 Further refactored determining random events in ob_main\Step_0.gml
 Only 1 line addition is necessary to add a new event to the event random generation.

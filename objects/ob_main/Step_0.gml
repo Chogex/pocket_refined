@@ -236,17 +236,17 @@ if roadmap_generated=false {
 					case 21: trainer_kind[i]=choose(02,17); break;
 			}
 		}
-		//	Total Weight: 100;
+		//	Set in ob_main/Create_0
 		var events = [
-			[35, ref_event_battle, true], // [event weight, macro name, free?]
-			[2.5, ref_event_payout, true],
-			[2.5, ref_event_freecard, true],
-			[15, ref_event_cardpack, false],
-			[10, ref_event_berry, true],
-			[20, ref_event_levelup, false],
-			[5, ref_event_evolution, false],
-			[7.5, ref_event_glyph, false],
-			[2.5, ref_event_tribute, false]
+			[event_battle_wt, ref_event_battle, true], // [event weight, macro name, free?]
+			[event_payout_wt, ref_event_payout, true],
+			[event_freecard_wt, ref_event_freecard, true],
+			[event_cardpack_wt, ref_event_cardpack, false],
+			[event_berry_wt, ref_event_berry, true],
+			[event_levelup_wt, ref_event_levelup, false],
+			[event_evolution_wt, ref_event_evolution, false],
+			[event_glyph_wt, ref_event_glyph, false],
+			[event_tribute_wt, ref_event_tribute, false]
 		];
 		//
 		do {

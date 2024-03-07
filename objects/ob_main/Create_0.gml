@@ -125,6 +125,12 @@ textbox_char_pos=0;
 #macro enigma_card_wt 250
 #macro stage_2_card_wt 900
 #macro stage_3_card_wt 400
+#macro basic_card_wt 7550
+//
+#macro allow_pseudo_chance 50 //Chance in percentage
+#macro allow_fossil_chance 75
+#macro allow_starter_chance 25
+#macro allow_baby_chance 25
 //
 battle_hp[0]=5; //10
 battle_hp[1]=15; //30
@@ -169,6 +175,17 @@ event_cost_standby_levelup=0;
 #macro ref_fly_prev 400 //only for transitions
 #macro ref_fly_next 401 //only for transitions
 #macro ref_mainmenu 999 //only for transitions
+//
+// Set the chances for events. Current total weight: 100
+#macro event_battle_wt 35
+#macro event_payout_wt 2.5
+#macro event_freecard_wt 2.5
+#macro event_cardpack_wt 15
+#macro event_berry_wt 10
+#macro event_levelup_wt 20
+#macro event_evolution_wt 5
+#macro event_glyph_wt 7.5
+#macro event_tribute_wt 2.5
 //
 for (var i=0; i<=999; i++;) {
 	event_cost[i]=0;
